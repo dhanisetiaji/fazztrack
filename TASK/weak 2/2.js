@@ -1,7 +1,7 @@
-const mtk = 80
-const bIndonesia = 90
-const bInggris = 89
-const ipa = 69
+const mtk = 0
+const bIndonesia = 101
+const bInggris = 102
+const ipa = 111
 
 if (typeof mtk == 'number' && typeof bIndonesia == 'number' && typeof bInggris == 'number' && typeof ipa == 'number') {
     const jumlah = mtk + bIndonesia + bInggris + ipa
