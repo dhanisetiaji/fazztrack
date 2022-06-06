@@ -5,9 +5,9 @@ const name = [
     'Deirdre', 'Diana', 'Elizabeth',
     'Ella', 'Faith', 'Olivia', 'Penelope'
 ]
-const searchName = (data, searchParams, showNum, callback) => {
+const searchName = (searchParams, showNum, callback) => {
     const datas = {
-        data, searchParams, showNum
+        data: name, searchParams, showNum
     }
     return callback(datas)
 }
@@ -18,15 +18,15 @@ const search = (datas) => {
         params = params.toLowerCase();
         return params.indexOf(searchParams) > -1;
     })
-    if (filters.length < 3) {
-        return filters
+    if (filters.length <= 0) {
+        return "data tidak ditemukan"
     } else {
         let tampung = [];
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < showNum; i++) {
             tampung.push(filters[i])
         }
         return tampung
     }
 }
 
-console.log(searchName(name, 'an', 3, search))
+console.log(searchName('an', 4, search))
