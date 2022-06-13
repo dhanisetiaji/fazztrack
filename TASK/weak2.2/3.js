@@ -13,9 +13,8 @@ const GithubInfo = (username) => new Promise((resolve, reject) => {
 
 const cekSakit = (status = false) => {
     return new Promise((resolve, reject) => {
-        Status = status
         const msg = 'LAGI SEHAT'
-        if (Status === false) {
+        if (status === false) {
             resolve(msg)
         } else {
             reject(new Error('Sedang Sakit'))
@@ -28,7 +27,7 @@ const cekSakit = (status = false) => {
 (async () => {
     try {
         console.log('======== PROGRAM 1 GET GITHUB INFO ========')
-        const username = readline.question('Username Github: ')
+        const username = await readline.question('Username Github: ')
         const GetInfo = await GithubInfo(username)
         if (!GetInfo.login) return console.log('Username Tidak ada!')
         console.log(`\n+++++ GET GITHUB INFO @${GetInfo.login} +++++\n`)
@@ -37,7 +36,7 @@ const cekSakit = (status = false) => {
         console.log(`Following: ${GetInfo.following}`)
         console.log(`Followers: ${GetInfo.followers}\n\n`)
         console.log('==== PROGRAM 2 CEK SAKIT ====')
-        const sakit = await cekSakit(true)
+        const sakit = await cekSakit(false)
         console.log(sakit)
     }
     catch (e) {

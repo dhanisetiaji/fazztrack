@@ -17,24 +17,25 @@ const cekHariKerja = (day) => {
 // cekHariKerja('sabtu').then(result => {
 //     console.log(result)
 // }).catch(err => {
-//     console.log(`${err}`)
+//     // console.log(`${err}`)
+//     console.log(err)
 // })
 /**
- * Disini cara yang dipakai memakai then catch dimana jika parameter kita isi argument
+ * Disini cara yang dipakai memakai then catch dimana jika parameter kita isi argument yg
  * sesuai list dataDay maka akan mengembalikan hari yang kita isi dan jika selain dataDay akan
  * memunculkan eror hari ini bukan hari kerja
  */
 
-// async function cek() {
-//     try {
-//         const result = await cekHariKerja('senin')
-//         console.log(result)
-//     } catch (err) {
-//         console.log(`${err}`)
-//     }
-// }
+async function cek() {
+    try {
+        const result = await cekHariKerja('senin')
+        console.log(result)
+    } catch (err) {
+        console.log(`${err}`)
+    }
+}
 
-// cek()
+cek()
 
 /**
  * disini memakai async try catch dimana didalam try saya inisialisasikan terlebih dahulu,
